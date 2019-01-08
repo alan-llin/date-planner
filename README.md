@@ -8,9 +8,9 @@ To Use:
 Must have npm installed
 Must have a Yelp Fusion API account and set that as the environment variable "yelp_api_key"
 
-1. Download/Clone the zip/git
-2. "npm install" in the root directory of the app
-3. "npm start" to run the app
+1.  Download/Clone the zip/git
+2.  "npm install" in the root directory of the app
+3.  "npm start" to run the app
 
 Functions:
 
