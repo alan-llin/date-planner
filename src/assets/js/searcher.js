@@ -1,4 +1,3 @@
-// fix indents
 var searchInterest = "";
 var searchLocation = "";
 
