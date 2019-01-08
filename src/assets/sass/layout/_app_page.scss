@@ -1,0 +1,94 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #A7D1D3;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #96BCBD;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #698384;
+    border-radius: 10px;
+}
+
+#app-page{
+
+  nav {
+      /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #A7D1D3;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #96BCBD;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #698384;
+        border-radius: 10px;
+    }
+    > ul {
+      scroll-behavior: smooth;
+      list-style: none;
+      padding: 0;
+      height:7em;
+      overflow: auto;
+      white-space: nowrap;
+
+      > li {
+        margin: 0 0 0 0;
+        opacity: 1;
+        padding: 1.5em 0.5em 1.5em 0.5em;
+        position: relative;
+        display: inline-block;
+
+        > a{
+          border-radius: 0.5em;
+          background: #ffe5e5;
+          padding: 1.5em;
+
+        }
+      }
+    }
+  }
+}
+
+#app-page #inputArea{
+  display: block;
+  margin: auto;
+  margin-bottom: 1em;
+  text-align: center;
+  > div{
+    width: 45%;
+    display: inline-block;
+  }
+}
+
+#app-page #buttonArea{
+  display: block;
+  margin: 0 auto 1.5em auto;
+  text-align: center;
+  > a{
+    margin: auto;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+}
