@@ -14,13 +14,13 @@ Must have a Yelp Fusion API account and set that as the environment variable "ye
 
 Functions:
 
-Search - Displays results from yelp based on interest and location
+Search - Displays results from yelp based on interest and location.
 
-Add to plan - To do
+Add to plan - Creates a plan item that you can store selected results in.
 
-Randomize - To do
+Randomize - Randomly select a result and set it in the current plan item.
 
-Currently only 3 javascript files matter:
+Currently only 3 .js files matter:
 searcher.js
-plan_manager.js - Doesn't function as intented yet.
+plan_manager.js - Doesn't function as intended yet.
 locator.js - Doesn't even work as of currently.
