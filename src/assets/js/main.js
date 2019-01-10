@@ -62,8 +62,29 @@ var $offset = 0;
 				);
 			});
 
+			// selecting a plan item
+			$(document.body).on("click", ".plan-item",function () {
+				var plan_num = this.getAttribute('id').split("_")[1];
+				setCurrPlan(plan_num);
+				console.log("Selected plan: "+getCurrPlan());
+				if (this.hasAttribute('data-business_id')){
+					console.log("Business_id: "+this.getAttribute('data-business_id'));
+				}
+			});
+
+			//Get business id and set that as an attribute in current plan
+			$(document.body).on("click", ".result-item",function () {
+				if (getCurrPlan() != -1) {
+					var business_id = this.getAttribute('id');
+					var curr_plan_item = "plan-item_"+getCurrPlan();
+					$('#'+curr_plan_item).attr('data-business_id', business_id);
+				}
+			});
+
+			// add to plan
 			$(document.body).on("click", "#addButton",function () {
 				addToPlan();
+				console.log("New plan: "+getCurrPlan());
 			});
 
 			//search function

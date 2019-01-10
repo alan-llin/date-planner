@@ -50,7 +50,8 @@ function appendResults(offset, limit){
 					if(is_closed == false){
 						$('#resultsDiv').append(
 							'<div id="' + id +
-							'" style="margin-top:50px;margin-bottom:50px;"><img src="' + image +
+							'" class="' + "result-item" +
+							'" style="margin-top:50px;margin-bottom:50px;border-style:solid;border-width:thin;border-color:#FFFFFF;"><img src="' + image +
 							'" style="width:200px;height:150px;"><br>We found <b>' + name +
 							'</b> (' + alias + ')<br>Business ID: ' + id +
 							'<br> Price: ' + price +
