@@ -17,21 +17,28 @@ function clearList() {
   counter = 0;
 }
 
+function updatePlanDetails(){
+
+}
+
 function addToPlan() {
-  counter += 1;
-  $("#app-page").find('#todolist').append(
-    $('<li>',{
-      "class":"plan-item",
-      "id":"plan-item_"+counter,
-    })
-    .append(
-      $("<a />",{
-        "text":counter,
-        "href":"#",
+  if (counter < 5){
+    counter += 1;
+    $("#app-page").find('#todolist').append(
+      $('<li>',{
+        "class":"plan-item",
+        "id":"plan-item_"+counter,
       })
-    )
-  );
-  setCurrPlan(counter);
+      .append(
+        $("<a />",{
+          "text":counter,
+          "href":"#",
+        })
+      )
+    );
+    setCurrPlan(counter);
+    console.log("New plan: "+getCurrPlan());
   //console.log("Curr_plan:  "+getCurrPlan());
   //console.log("Curr_count: "+getCounter());
+  }
 }

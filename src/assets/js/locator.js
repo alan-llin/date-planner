@@ -10,10 +10,14 @@ function getLocation() {
     }
 }
 
-function showPosition(position) {
+function getLocationIP() {
+  // get location based on IP, this will be deprecated for handheld devices like phones or tablets
+}
+
+function showPosition(position){
     console.log("Latitude: "+ position.coords.latitude+ "Longitude: " + position.coords.longitude);
 }
 
 function onError(error){
-    console.log("Error Code: " + error.code);
+    console.log("Cannot get current location, Error Code: " + error.code);
 }

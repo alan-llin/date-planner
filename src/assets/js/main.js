@@ -78,13 +78,13 @@ var $offset = 0;
 					var business_id = this.getAttribute('id');
 					var curr_plan_item = "plan-item_"+getCurrPlan();
 					$('#'+curr_plan_item).attr('data-business_id', business_id);
+					console.log("DEBUG - Adding "+business_id+" to "+curr_plan_item)
 				}
 			});
 
 			// add to plan
 			$(document.body).on("click", "#addButton",function () {
 				addToPlan();
-				console.log("New plan: "+getCurrPlan());
 			});
 
 			//search function
