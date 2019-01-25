@@ -1,6 +1,3 @@
-var myLat = "";
-var myLong = "";
-
 function getLocation() {
     if (navigator.geolocation) {
 				console.log("Geolocation is on");

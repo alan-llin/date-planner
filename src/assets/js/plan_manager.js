@@ -1,6 +1,3 @@
-var counter = 0;
-var curr_plan = -1;
-
 function getCounter(){
   return counter;
 }
@@ -10,15 +7,26 @@ function getCurrPlan() {
 }
 
 function setCurrPlan(plan_num) {
-  curr_plan = plan_num
+  curr_plan = plan_num;
 }
 
 function clearList() {
   counter = 0;
 }
 
-function updatePlanDetails(){
+function createPlanDetails(plan_num, business){
+  $('#details-div').append(
+    $('<div>',{
+      "class":"details-item",
+      "id":"details-div_"+plan_num,
+      "text":business.name,
+      "style":"margin-top:50px;margin-bottom:50px;border-style:solid;border-width:thin;border-color:#FFFFFF;"
+    }).data("business_object", business)
+  );
+}
 
+function updatePlanDetails(plan_num, business){
+  $("#details-div_"+plan_num).text(business.name).data("business_object", business);
 }
 
 function addToPlan() {

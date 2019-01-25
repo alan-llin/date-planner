@@ -22,6 +22,7 @@ function(n) {
           if (event.target.dataset.section) {
             navigation.menu.hideAllSections()
             navigation.menu.showSection(event)
+            current_section = event.target.dataset.section
           }
         })
       },

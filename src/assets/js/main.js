@@ -67,23 +67,40 @@ var $offset = 0;
 				var plan_num = this.getAttribute('id').split("_")[1];
 				setCurrPlan(plan_num);
 				console.log("Selected plan: "+getCurrPlan());
+				$("#details-div").children().hide()
 				if (this.hasAttribute('data-business_id')){
 					console.log("Business_id: "+this.getAttribute('data-business_id'));
+					$("#details-div_"+plan_num).show()
 				}
+			});
+
+			$(document.body).on("click", ".details-item", function () {
+				var business = $(this).data('business_object');
+				console.log(business);
 			});
 
 			//Get business id and set that as an attribute in current plan
 			$(document.body).on("click", ".result-item",function () {
 				if (getCurrPlan() != -1) {
+					var curr_plan_num = getCurrPlan();
 					var business_id = this.getAttribute('id');
-					var curr_plan_item = "plan-item_"+getCurrPlan();
+					var business = $(this).data('business_object');
+					var curr_plan_item = "plan-item_"+curr_plan_num;
 					$('#'+curr_plan_item).attr('data-business_id', business_id);
-					console.log("DEBUG - Adding "+business_id+" to "+curr_plan_item)
+					console.log("DEBUG - Adding "+business_id+" to "+curr_plan_item);
+
+					if ($("#details-div_"+curr_plan_num).length == 0) {
+						createPlanDetails(curr_plan_num, business);
+					}
+					else{
+						updatePlanDetails(curr_plan_num, business);
+					}
 				}
 			});
 
 			// add to plan
 			$(document.body).on("click", "#addButton",function () {
+				$("#details-div").children().hide();
 				addToPlan();
 			});
 
@@ -99,11 +116,13 @@ var $offset = 0;
 
 			//load more results
 			$(window).scroll(function() {
-		    if($(window).scrollTop() + $(window).height() >= $(document).height() && $('#resultsDiv').html().trim()) {
-					$offset+=1;
-					var newoffset = $offset*$limit
-					appendResults(newoffset,$limit);
-		    }
+		    if ($(window).scrollTop() + $(window).height() >= $(document).height() && $('#resultsDiv').html().trim()) {
+					if (current_section == "app-page") {
+						$offset+=1;
+						var newoffset = $offset*$limit;
+						appendResults(newoffset,$limit);
+		    	}
+				}
 			});
 
 		// Sidebar.
